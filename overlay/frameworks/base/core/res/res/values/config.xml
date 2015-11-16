@@ -261,11 +261,5 @@
 
     <!-- Boolean to enable STK functionality on Samsung phones -->
     <bool name="config_samsung_stk">true</bool>
-    
-    <!-- Full path to the torch sysfs toggle -->
-    <string name="flashDevice">/sys/class/leds/torch-sec1/brightness</string>
-
-    <!-- Torch on default brightness -->
-    <integer name="valueOn">255</integer>
 
 </resources>
