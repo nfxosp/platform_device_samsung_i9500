@@ -314,7 +314,6 @@ public class ExynosXMM6360RIL extends RIL {
         int gsmBitErrorRate = p.readInt();
         int cdmaDbm = p.readInt();
         int cdmaEcio = p.readInt();
-        int evdoDbm = p.readInt();
         int evdoEcio = p.readInt();
         int evdoSnr = p.readInt();
         int lteSignalStrength = p.readInt();
@@ -338,13 +337,13 @@ public class ExynosXMM6360RIL extends RIL {
 
         if (RILJ_LOGD)
             riljLog("gsmSignalStrength:" + gsmSignalStrength + " gsmBitErrorRate:" + gsmBitErrorRate +
-                    " cdmaDbm:" + cdmaDbm + " cdmaEcio:" + cdmaEcio + " evdoDbm:" + evdoDbm +
+                    " cdmaDbm:" + cdmaDbm + " cdmaEcio:" + cdmaEcio +
                     " evdoEcio: " + evdoEcio + " evdoSnr:" + evdoSnr +
                     " lteSignalStrength:" + lteSignalStrength + " lteRsrp:" + lteRsrp +
                     " lteRsrq:" + lteRsrq + " lteRssnr:" + lteRssnr + " lteCqi:" + lteCqi +
                     " tdScdmaRscp:" + tdScdmaRscp + " isGsm:" + (isGsm ? "true" : "false"));
 
-        return new SignalStrength(gsmSignalStrength, gsmBitErrorRate, cdmaDbm, cdmaEcio, evdoDbm,
+        return new SignalStrength(gsmSignalStrength, gsmBitErrorRate, cdmaDbm, cdmaEcio,
                 evdoEcio, evdoSnr, lteSignalStrength, lteRsrp, lteRsrq, lteRssnr, lteCqi,
                 tdScdmaRscp, isGsm);
     }
