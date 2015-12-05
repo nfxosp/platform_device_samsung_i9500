@@ -2,3 +2,6 @@ allow mediaserver camera_data_file:dir rw_dir_perms;
 allow mediaserver camera_data_file:file create_file_perms;
 allow mediaserver camera_prop:property_service set;
 allow mediaserver secmem_device:chr_file rw_file_perms;
+
+allow mediaserver sensorservice_service:service_manager { find } ;
+allow mediaserver healthd_service:service_manager { find } ;

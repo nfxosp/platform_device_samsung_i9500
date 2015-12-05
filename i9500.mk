@@ -76,6 +76,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
+    libstlport \
     libdmitry
 
 PRODUCT_COPY_FILES += \
