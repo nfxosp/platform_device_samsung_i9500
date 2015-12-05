@@ -12,9 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# HAL module implementation stored in
-# hw/<POWERS_HARDWARE_MODULE_ID>.<ro.hardware>.so
-
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)

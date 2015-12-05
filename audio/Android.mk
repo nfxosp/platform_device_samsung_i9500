@@ -14,14 +14,15 @@
 
 LOCAL_PATH := $(call my-dir)
 
-# Audio HAL
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := audio.primary.$(TARGET_BOOTLOADER_BOARD_NAME)
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_SRC_FILES := audio_hw.c ril_interface.c
+LOCAL_SRC_FILES := \
+    audio_hw.c \
+    ril_interface.c
 
 LOCAL_C_INCLUDES += \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include \

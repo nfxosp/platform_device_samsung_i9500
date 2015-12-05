@@ -75,6 +75,9 @@ PRODUCT_PACKAGES += \
     setup_fs
 
 # GPS
+PRODUCT_PACKAGES += \
+    libdmitry
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.cer:system/etc/gps.cer \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
@@ -143,13 +146,17 @@ PRODUCT_COPY_FILES += \
 # OMX
 PRODUCT_PACKAGES += \
     libExynosOMX_Core \
+    libOMX.Exynos.AAC.Decoder \
+    libOMX.Exynos.FLAC.Decoder \
     libOMX.Exynos.AVC.Decoder \
     libOMX.Exynos.AVC.Encoder \
+    libOMX.Exynos.MP3.Decoder \
     libOMX.Exynos.MPEG2.Decoder \
     libOMX.Exynos.MPEG4.Decoder \
     libOMX.Exynos.MPEG4.Encoder \
     libOMX.Exynos.VP8.Decoder \
     libOMX.Exynos.WMV.Decoder \
+    libOMX.Exynos.WMA.Encoder \
     libstagefrighthw
 
 # Power
@@ -177,10 +184,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
-
-# Set default USB interface
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
 
 # Permissions
 PRODUCT_COPY_FILES += \

@@ -1,4 +1,5 @@
-# Copyright (C) 2015, The CyanogenMod Project <http://www.cyanogenmod.org>
+# Copyright (C) 2015 The Android Open Source Project
+# Written by Dmitry Grinberg
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,20 +17,8 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := camera.$(TARGET_BOOTLOADER_BOARD_NAME)
-LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
+LOCAL_SHARED_LIBRARIES := liblog libcutils libgui libbinder libutils
+LOCAL_SRC_FILES := libdmitry.c
+LOCAL_MODULE := libdmitry
 LOCAL_MODULE_TAGS := optional
-
-LOCAL_SRC_FILES := \
-    CameraWrapper.cpp
-
-LOCAL_C_INCLUDES += \
-    system/media/camera/include
-
-LOCAL_SHARED_LIBRARIES := \
-    libhardware \
-    liblog \
-    libcamera_client \
-    libutils
-
 include $(BUILD_SHARED_LIBRARY)

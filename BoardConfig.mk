@@ -28,6 +28,12 @@ TARGET_OTA_ASSERT_DEVICE := ja3g,i9500,GT-I9500
 TARGET_BOOTLOADER_BOARD_NAME := universal5410
 TARGET_NO_BOOTLOADER := true
 
+# Build
+TARGET_USES_BLOCK_BASED_OTA := false
+WITH_DEXPREOPT_BOOT_IMG_ONLY ?= false
+WITH_DEXPREOPT := false
+DONT_DEXPREOPT_PREBUILTS := true
+
 # Platform
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_SLSI_VARIANT := cm
@@ -94,12 +100,16 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 EXTENDED_FONT_FOOTPRINT := true
 
 # Graphics
+BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl/egl.cfg
 BOARD_EGL_SYSTEMUI_PBSIZE_HACK := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 COMMON_GLOBAL_CFLAGS += -DSURFACE_IS_BGR32
 COMMON_GLOBAL_CFLAGS += -DUSE_NATIVE_SEC_NV12TILED
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 USE_OPENGL_RENDERER := true
+
+# Keymaster
+BOARD_USES_TRUST_KEYMASTER := true
 
 # NFC
 BOARD_NFC_HAL_SUFFIX := universal5410
@@ -117,23 +127,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # SELinux
 BOARD_SEPOLICY_DIRS += \
     device/samsung/i9500/sepolicy
-
-BOARD_SEPOLICY_UNION := \
-    bluetooth.te \
-    device.te \
-    drmserver.te \
-    file_contexts \
-    file.te \
-    gpsd.te \
-    mediaserver.te \
-    property_contexts \
-    property.te \
-    pvrsrvctl.te \
-    rild.te \
-    shell.te \
-    system_server.te \
-    ueventd.te \
-    wpa.te
 
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI          := true
