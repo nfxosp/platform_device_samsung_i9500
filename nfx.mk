@@ -18,13 +18,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from i9500 device
 $(call inherit-product, device/samsung/i9500/i9500.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
+# Inherit some common stuff.
+$(call inherit-product, vendor/nfx/config/common.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
-
-PRODUCT_NAME := cm_i9500
+PRODUCT_NAME := nfx_i9500
 PRODUCT_DEVICE := i9500
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := GT-I9500
@@ -39,4 +36,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT="samsung/ja3gxx/ja3g:5.0.1/LRX22C/I9500XXUHOI1:user/release-keys" \
     PRIVATE_BUILD_DESC="ja3gxx-user 5.0.1 LRX22C I9500XXUHOI1 release-keys"
 
-TARGET_UNOFFICIAL_BUILD_ID := GearCM
+TARGET_UNOFFICIAL_BUILD_ID := GearBuilt

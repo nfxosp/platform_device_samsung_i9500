@@ -96,11 +96,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
-# Shouldn't be required on Android M
-## Doze
-##PRODUCT_PACKAGES += \
-##    SamsungDoze
-
 # FileSystem
 PRODUCT_PACKAGES += \
     make_ext4fs \
